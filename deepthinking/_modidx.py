@@ -5,4 +5,10 @@ d = { 'settings': { 'branch': 'main',
                 'doc_host': 'https://mckjzhangxk.github.io',
                 'git_url': 'https://github.com/mckjzhangxk/deepthinking',
                 'lib_path': 'deepthinking'},
-  'syms': {'deepthinking.core': {'deepthinking.core.foo': ('core.html#foo', 'deepthinking/core.py')}}}
+  'syms': { 'deepthinking.core': {'deepthinking.core.foo': ('core.html#foo', 'deepthinking/core.py')},
+            'deepthinking.trasnform101': { 'deepthinking.trasnform101.batch_dataset': ( 'transformer.html#batch_dataset',
+                                                                                        'deepthinking/trasnform101.py'),
+                                           'deepthinking.trasnform101.padding_dynamic': ( 'transformer.html#padding_dynamic',
+                                                                                          'deepthinking/trasnform101.py'),
+                                           'deepthinking.trasnform101.padding_fix': ( 'transformer.html#padding_fix',
+                                                                                      'deepthinking/trasnform101.py')}}}

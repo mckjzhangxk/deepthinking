@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "deepthinking"
+  site-url: "https://mckjzhangxk.github.io/deepthinking"
+  description: "deeping thinking for your studying"
+  repo-branch: main
+  repo-url: "https://github.com/mckjzhangxk/deepthinking"

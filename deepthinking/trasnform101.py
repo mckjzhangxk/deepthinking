@@ -3,7 +3,21 @@
 # %% auto 0
 __all__ = ['batch_dataset', 'padding_fix', 'padding_dynamic']
 
-# %% ../nbs/00_transformer.ipynb 57
+# %% ../nbs/00_transformer.ipynb 2
+# ! pip install datasets evaluate transformers[sentencepiece]
+from transformers import AutoTokenizer
+from transformers import AutoModel
+from transformers import AutoModelForSequenceClassification
+from transformers import AutoModelForCausalLM
+from torch.utils.data import dataset, sampler, dataloader
+from datasets import load_dataset,DatasetDict,Dataset
+from transformers import BertConfig, BertModel,AutoConfig
+from transformers import DataCollatorWithPadding
+import pandas as pd
+from transformers import Trainer,TrainingArguments,DataCollatorWithPadding
+import numpy as np
+
+# %% ../nbs/00_transformer.ipynb 50
 def batch_dataset(ds:DatasetDict, #数据集
                   mapping_func #func(example,maxlen)签名的函数
                  ):
@@ -16,7 +30,7 @@ def batch_dataset(ds:DatasetDict, #数据集
     ds=ds.with_format('torch')
     return ds
 
-# %% ../nbs/00_transformer.ipynb 60
+# %% ../nbs/00_transformer.ipynb 53
 def padding_fix(example,maxlen=512):
     """
     把example的句子通过`padding`填充的方式，转换成固定`maxlen`长度的tokens，然后返回。
@@ -28,7 +42,7 @@ def padding_fix(example,maxlen=512):
                    max_length=maxlen)
     return ret
 
-# %% ../nbs/00_transformer.ipynb 65
+# %% ../nbs/00_transformer.ipynb 57
 def padding_dynamic(example,maxlen=512):
     """
     按照example的句子按照句子的实际长度进行返回。

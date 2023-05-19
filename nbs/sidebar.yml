@@ -6,3 +6,6 @@ website:
       - 00_transformer.ipynb
       - 01数据处理.ipynb
       - 02stable_diffuse_model.ipynb
+      - 03matplotlib101.ipynb
+      - growtree.ipynb
+      - 冷门知识.ipynb

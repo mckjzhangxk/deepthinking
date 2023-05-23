@@ -1,6 +1,6 @@
 _docs/
 _proc/
-
+*.mp4
 *.bak
 .gitattributes
 .last_checked
